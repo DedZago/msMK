@@ -1,0 +1,5 @@
+clang
+%c -std=c11
+%cpp -std=c++2a
+-I/home/yech/.local/lib/R-3.6/library/Rcpp/include/
+-I/usr/include/R

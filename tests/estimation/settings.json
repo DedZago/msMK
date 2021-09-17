@@ -1,0 +1,11 @@
+{
+  "gen": "r11",
+  "df" : "f11",
+  "mod_sim" : 10,
+  "p" : 5,
+  "n" : 1000,
+  "delta" : 0.25,
+  "indep": true,
+  "nsim" : 400,
+  "burnin" : 1000
+}

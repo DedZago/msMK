@@ -1,0 +1,134 @@
+library("devtools")
+library(RcppArmadillo)
+library(Rcpp)
+library("reticulate")
+library(rjson)
+setwd("~/Documents/git/MSc-thesis/code/msMK")
+source("tests/tests.R")
+devtools::load_all()
+
+reticulate::py_install(c("numpy", "numpy-hilbert-curve"), pip = TRUE)
+reticulate::source_python("hilbertSplit.py")
+
+setwd("~/Documents/git/MSc-thesis/code/tests/estimation/")
+opts = fromJSON(file="settings.json")
+mod_sim = opts$mod_sim
+
+library(DPpackage)
+
+lpml_mat = matrix(nrow = mod_sim, ncol = 2)
+for(i in 1:mod_sim){
+  delta = opts$delta
+  indep = opts$indep
+  nsim = opts$nsim
+  burnin = opts$burnin
+  p = as.integer(opts$p)
+  n = as.integer(opts$n)
+
+  if(p > 2){
+    gen.str = paste0(opts$gen, "_p" )
+    df.str = paste0(opts$df, "_p")
+    gen = function(n) get(gen.str)(n, p = p)
+    df = function(x) get(df.str)(x, p = p)
+  } else if (p == 2){
+    gen.str = paste0(opts$gen, "_2" )
+    df.str = paste0(opts$df, "_2")
+    gen = get(gen.str)
+    df = get(df.str)
+  }
+  
+  dir.str = paste0("~/Documents/git/MSc-thesis/code/tests/estimation/", opts$gen, "_", p)
+  if(!dir.exists(dir.str)){
+    dir.create(dir.str)
+    dir.create(paste0(dir.str, "/img"))
+    dir.create(paste0(dir.str, "/tex"))
+  }
+  setwd(dir.str)
+
+  cat("Simulazione -- ", i, "\n")
+  set.seed(i)
+  
+  y = gen(n) 
+  y.stand = y
+  
+  
+  name = paste0("i", i,"-DPfix")
+
+  # Initial state
+  state <- NULL
+
+  # MCMC parameters
+  mu0 = apply(y, 2, mean)
+  sig0 = diag(apply(y, 2, var))
+
+  nburn <- burnin
+  nsave <- nsim
+  nskip <- 0
+  ndisplay <- 100
+  mcmc <- list(nburn=nburn,nsave=nsave,nskip=nskip,ndisplay=ndisplay)
+
+  # DP without hyperprior
+  # prior <- list(alpha=2.5, m1=mu0, psiinv1=sig0,
+  #                nu1=p, k0 = 1)
+
+  # DP plus hyperprior
+  # prior <- list(a0=1,b0=1, m2=mu0, psiinv2=sig0,
+  #                nu1=p, nu2=p, 
+  #                s2 = diag(1, nrow=p),
+  #                tau1=2,tau2=200)
+
+
+  fit1.1 <- NULL
+  attempt <- 1
+  while( is.null(fit1.1) && attempt <= 50 ) {
+    attempt <- attempt + 1
+    try(
+        fit1.1 <- DPdensity(y, ngrid=1, prior=prior,mcmc=mcmc, state=state, status=TRUE)
+    )
+  } 
+
+    
+  cat("Done", "\n\n")
+  
+  cat("Calculating LPML", "\n")
+  lpml_dp = mean(log(fit1.1$cpo))
+  lpml_true = lpml(y.stand, df)
+  lpml_mat[i, ] = c(lpml_dp, lpml_true)
+  colnames(lpml_mat) = c("DP", "True")
+  cat("Done", "\n\n")
+}
+save(lpml_mat, file=paste0("lpml-DPfix-n", n,".Rdata"))
+lpml_mean = as.matrix(apply(lpml_mat, 2, mean, na.rm = TRUE))
+lpml_sd = as.matrix(apply(lpml_mat, 2, sd, na.rm = TRUE))
+library(magrittr)
+library(kableExtra)
+tab_name = paste0("lpml-DPfix-n", n)
+cbind(lpml_mean, lpml_sd) %>%
+  set_colnames(c("lpml", "sd")) %>%
+  kbl("latex", booktabs = TRUE, escape = FALSE,
+      col.names = c("$\\overbar{\\text{lpml}}$", "$\\text{sd}(\\overbar{\\text{lpml}})$"),
+      caption = "Average lpml and related standard error over $n_{\\text{sim}} = 10$ simulations.",
+      label = ) %>%
+  kable_styling(latex_options = "HOLD_position") %>%
+  cat(file=paste0("tex/", tab_name, ".tex"))
+
+# # Initial state
+# state <- NULL
+
+# # MCMC parameters
+
+# nburn <- 1000
+# nsave <- 400
+# nskip <- 0
+# ndisplay <- 100
+# mcmc <- list(nburn=nburn,nsave=nsave,nskip=nskip,ndisplay=ndisplay)
+
+# # Example of Prior information 1
+# # Fixing alpha, m1, and Psi1
+
+# prior1 <- list(alpha=1,m1=mu0,psiinv1=sig0,nu1=4,
+#                tau1=1,tau2=4)
+
+# fit1.1 <- DPdensity(y=y, ngrid = 2500, prior=prior1,mcmc=mcmc, state=state,status=TRUE)
+
+# contour(fit1.1$x1, fit1.1$x2, fit1.1$dens, ylim = c(-4, 4), xlim = c(-4,4))

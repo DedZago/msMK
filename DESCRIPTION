@@ -11,5 +11,5 @@ Description: More details about what the package does. See
 License: GPL (>= 2)
 Suggests: tinytest
 Imports: Rcpp (>= 1.0.5)
-LinkingTo: Rcpp, RcppArmadillo
-Depends: TruncatedNormal,tmvtnorm,truncnorm
+LinkingTo: Rcpp, RcppArmadillo, RcppDist
+Depends: TruncatedNormal,tmvtnorm,truncnorm,RcppDist,reticulate

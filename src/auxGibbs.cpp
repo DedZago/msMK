@@ -14,7 +14,7 @@
 #include <RcppArmadillo.h>
 #include <RcppDist.h>
 
-// [[Rcpp::depends(truncnorm)]]
+// [[Rcpp::depends(truncnorm, RcppDist)]]
 
 using namespace arma;
 using namespace Rcpp;

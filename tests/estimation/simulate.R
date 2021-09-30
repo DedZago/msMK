@@ -1,16 +1,17 @@
 library("devtools")
+# install_github("DedZago/msMK")
+library("msMK")
+setwd("~/Documents/git/msMK")
 library(RcppArmadillo)
 library(Rcpp)
 library("reticulate")
 library(rjson)
-setwd("~/Documents/git/MSc-thesis/code/msMK")
 source("tests/tests.R")
-devtools::load_all()
 
 reticulate::py_install(c("numpy", "numpy-hilbert-curve"), pip = TRUE)
-reticulate::source_python("hilbertSplit.py")
+reticulate::source_python("inst/hilbertSplit.py")
 
-setwd("~/Documents/git/MSc-thesis/code/tests/estimation/")
+setwd("~/Documents/git/msMK/tests/estimation/")
 opts = fromJSON(file="settings.json")
 mod_sim = opts$mod_sim
 
@@ -22,6 +23,7 @@ for(i in 1:mod_sim){
   burnin = opts$burnin
   p = as.integer(opts$p)
   n = as.integer(opts$n)
+
 
   if(p > 2){
     gen.str = paste0(opts$gen, "_p" )
@@ -42,7 +44,14 @@ for(i in 1:mod_sim){
     dir.create(paste0(dir.str, "/tex"))
   }
   setwd(dir.str)
-
+  
+  # Skip if already saved model
+  name = paste0("i", i,"-ind", indep)
+  if(file.exists(paste0(name, ".Rdata"))){
+    print(i)
+    next
+  }
+  
   a = deltaToAlpha(delta)[3]
   cat("delta:", delta, ", ", "alpha:", a, "\n")
   cat("Simulazione -- ", i, "\n")
@@ -82,7 +91,6 @@ for(i in 1:mod_sim){
     )
   } 
   
-  name = paste0("i", i,"-ind", indep)
   
   # if(p == 2){
   #   cat("Drawing smoothed predictive density", "\n")

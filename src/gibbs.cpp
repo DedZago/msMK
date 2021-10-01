@@ -37,7 +37,6 @@ using std::vector;
 arma::umat clusterAllocation(
                 const arma::mat &TH,
                 const arma::cube &SIG,
-                const arma::cube &thrs,
                 const vector<double> &prob,
                 const arma::vec &pi_s,
                 const arma::mat &data,
@@ -60,13 +59,7 @@ arma::umat clusterAllocation(
             int hmax = n_elem_scale(s);
             for(int h = 1; h <= hmax; ++h){
                 vec mu_sh = extractNode(TH, s, h);
-                // Matrix of thresholds
                 mat sigma_sh = extractNode(SIG, s, h);
-                mat thrs_sh = extractNode(thrs, s, h);  
-                // Lower truncation bounds
-                vec lb = thrs_sh.row(0).t();            
-                // Upper truncation bound
-                vec ub = thrs_sh.row(1).t();            
                 // Tree to vector index
                 int idx = sh_to_idx(s, h);              
                 // Calculate conditional weight for scale s
@@ -138,12 +131,12 @@ arma::umat clusterAllocation(
 arma::umat clusterAllocation(
                 const arma::mat &TH,
                 const arma::cube &SIG,
-                const arma::cube &thrs,
                 const vector<double> &prob,
                 const arma::vec &pi_s,
                 const arma::mat &data,
                 const arma::umat &cl_old,
-                bool indep
+                bool indep,
+                NumericVector &cpo_inv
         )
 {
         const int n = data.n_rows;
@@ -156,18 +149,13 @@ arma::umat clusterAllocation(
         
         mat dens_mat(n, nelem, fill::zeros);
         mat post_s(n, smax + 1, fill::zeros);
+        vec dens_cpo(n, fill::zeros);
         
         for(int s = 0; s <= smax; ++s){
             int hmax = n_elem_scale(s);
             for(int h = 1; h <= hmax; ++h){
                 vec mu_sh = extractNode(TH, s, h);
                 mat sigma_sh = extractNode(SIG, s, h);
-                // Matrix of thresholds
-                mat thrs_sh = extractNode(thrs, s, h);  
-                // Lower truncation bounds
-                vec lb = thrs_sh.row(0).t();            
-                // Upper truncation bound
-                vec ub = thrs_sh.row(1).t();            
                 // Tree to vector index
                 int idx = sh_to_idx(s, h);              
 
@@ -178,6 +166,9 @@ arma::umat clusterAllocation(
                 vec dens = dmvnorm(data, mu_sh, sigma_sh);
                 dens_mat.col(idx)  = dens;
                 post_s.col(s) += barpi_sh * dens;
+                
+                // Density for cpo
+                dens_cpo = dens_cpo + prob[idx] * dens;
             }
             
             // post_s(s) is zero if u > pi_s(s)
@@ -190,6 +181,11 @@ arma::umat clusterAllocation(
                 }
             }
         }
+        
+        // Add to current cpo_inverse
+        vec inv_dens = 1 / dens_cpo;
+        cpo_inv = cpo_inv +  NumericVector(inv_dens.begin(), inv_dens.end());
+        
         
         // Normalize probabilities
         vec rsums = rowSum(post_s);

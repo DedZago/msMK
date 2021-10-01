@@ -12,16 +12,18 @@ for(w in 1:length(dirs)){
     if(!file.exists(imgname)){
         pred_list = vector(mode = "list", length = 10)
         cat(dirs[w], "\n")
-        for(j in 1:10){
+        nsim = 50
+        for(j in 1:nsim){
             cat("j:", j, "\n")
             load(paste0(dirs[w], "/i", j,"-indTRUE.Rdata"))
             pred_list[[j]] = predictive_smooth_average(mcmc.msmk, y.stand, ylim = c(-4.5,4.5))
         }
+        save(pred_list, file = paste0(dirs[w], "pred_list-indTRUE.Rdata"))
         pred = matrix(0, nrow = NROW(pred_list[[1]]$fhat), ncol = NCOL(pred_list[[1]]$fhat))
-        for(j in 1:10){
+        for(j in 1:nsim){
             pred = pred + pred_list[[j]]$fhat
         }
-        pred = pred / 10
+        pred = pred / nsim
 
         png(imgname, width = 2200, height = 1200, res = 100)
         x = pred_list[[1]]$x1
@@ -39,17 +41,19 @@ for(w in 1:length(dirs)){
     if(!file.exists(imgname)){
         pred_list = vector(mode = "list", length = 10)
         cat(dirs[w], "\n")
-        for(j in 1:10){
+        nsim = 50
+        for(j in 1:nsim){
             cat("j:", j, "\n")
             load(paste0(dirs[w], "/i", j,"-indFALSE.Rdata"))
             pred_list[[j]] = predictive_smooth_average(mcmc.msmk, y.stand, ylim = c(-4.5,4.5))
         }
+        save(pred_list, file = paste0(dirs[w], "pred_list-indFALSE.Rdata"))
         pred = matrix(0, nrow = NROW(pred_list[[1]]$fhat), ncol = NCOL(pred_list[[1]]$fhat))
-        for(j in 1:10){
+        for(j in 1:nsim){
             pred = pred + pred_list[[j]]$fhat
         }
-        pred = pred / 10
-
+        pred = pred / nsim
+        
         png(imgname, width = 2200, height = 1200, res = 100)
         x = pred_list[[1]]$x1
         y = pred_list[[1]]$x2

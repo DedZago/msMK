@@ -7,6 +7,7 @@ library(Rcpp)
 library("reticulate")
 library(rjson)
 source("tests/tests.R")
+load_all()
 
 reticulate::py_install(c("numpy", "numpy-hilbert-curve"), pip = TRUE)
 reticulate::source_python("inst/hilbertSplit.py")
@@ -37,7 +38,7 @@ for(i in 1:mod_sim){
     df = get(df.str)
   }
   
-  dir.str = paste0("~/Documents/git/MSc-thesis/code/tests/estimation/", opts$gen, "_", p)
+  dir.str = paste0("~/Documents/git/msMK/tests/estimation/", opts$gen, "_", p)
   if(!dir.exists(dir.str)){
     dir.create(dir.str)
     dir.create(paste0(dir.str, "/img"))
@@ -46,7 +47,7 @@ for(i in 1:mod_sim){
   setwd(dir.str)
   
   # Skip if already saved model
-  name = paste0("i", i,"-ind", indep)
+  name = paste0("i", i,"-ind", indep,"-n",n)
   if(file.exists(paste0(name, ".Rdata"))){
     print(i)
     next
@@ -103,12 +104,12 @@ for(i in 1:mod_sim){
   cat("Done", "\n\n")
   
   cat("Calculating LPML", "\n")
-  lpml_msmk = msMK.lpml(y.stand, mcmc.msmk)
+  lpml_msmk = msMK.lpml(mcmc.msmk$cpo)
   lpml_true = lpml(y.stand, df)
   lpml_mat[i, ] = c(lpml_msmk, lpml_true)
   colnames(lpml_mat) = c("msMK", "True")
   cat("Done", "\n\n")
-  # save.image(file = paste0(name, ".Rdata"))
+  save.image(file = paste0(name, ".Rdata"))
 }
 save(lpml_mat, file=paste0("lpml-ind", indep, "-n", n, ".Rdata"))
 lpml_mean = as.matrix(apply(lpml_mat, 2, mean, na.rm = TRUE))

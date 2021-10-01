@@ -24,20 +24,18 @@ Rcpp::NumericVector dmsMK(
     const std::vector<double> &prob,
     bool indep)
 {
-    int smax = n_scales_tree(TH);
+    int nkern = SIG.n_slices;
     
+    // Vector of outputs
     vec out(x.n_rows, fill::zeros);
     
-    for(int s = 0; s <= smax; s++){
-      R_CheckUserInterrupt();
-      int hmax = n_elem_scale(s);
-      for (int h = 1; h <= hmax; h++) {
-        vec theta = extractNode(TH, s, h);
-        mat sigma = extractNode(SIG, s, h);
+    for(int i = 0; i < nkern; ++i){
+        R_CheckUserInterrupt();
+        vec theta = TH.col(i);
+        mat sigma = SIG.slice(i);
         vec dens = dmvnorm(x, theta, sigma);
         
-        out += extractNode(prob, s, h) * dens; 
-      }
+        out += prob[i] * dens; 
     }
     return NumericVector(out.begin(), out.end());
 }

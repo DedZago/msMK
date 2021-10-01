@@ -18,7 +18,6 @@ using namespace Rcpp;
 arma::umat clusterAllocation(
                 const arma::mat &TH,
                 const arma::cube &SIG,
-                const arma::cube &thrs,
                 const vector<double> &prob,
                 const arma::vec &pi_s,
                 const arma::mat &data,
@@ -27,12 +26,13 @@ arma::umat clusterAllocation(
 arma::umat clusterAllocation(
                 const arma::mat &TH,
                 const arma::cube &SIG,
-                const arma::cube &thrs,
                 const vector<double> &prob,
                 const arma::vec &pi_s,
                 const arma::mat &data,
                 const arma::umat &cl_old,
-                bool indep);
+                bool indep,
+                NumericVector &cpo_inv
+                );
 
 vector<double> treeUpdate(
         const arma::umat& cluster,

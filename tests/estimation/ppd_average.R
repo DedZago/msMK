@@ -1,9 +1,9 @@
 pacman::p_load("kableExtra", "magrittr", "gtools")
-setwd("~/Documents/git/MSc-thesis/code/msMK")
+setwd("/home/dede/Documents/git/msMK/")
 source("tests/tests.R")
 devtools::load_all()
 
-setwd("/home/dede/Documents/git/MSc-thesis/code/tests/estimation")
+setwd("/home/dede/Documents/git/msMK/tests/estimation")
 # 2 dimensions
 dirs = list.dirs(recursive = FALSE)
 dirs = dirs[grepl("_2", dirs)]

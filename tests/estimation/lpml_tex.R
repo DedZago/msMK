@@ -5,7 +5,7 @@ dirs = list.dirs(recursive = FALSE)
 dirs = dirs[grepl("_2", dirs)]
 dirs = mixedsort(dirs)  
 lpml_list = vector(mode = "list", length = length(dirs)*3)
-setwd("/home/dede/Documents/git/MSc-thesis/code/tests/estimation")
+setwd("/home/dede/Documents/git/msMK/tests/estimation")
 
 ns = c(250, 500, 1000)
 for(n in 1:length(ns)){

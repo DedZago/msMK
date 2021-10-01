@@ -1,1 +1,1 @@
-{"gen":"r11","df":"f11","mod_sim":50,"p":2,"n":500,"delta":0.25,"indep":false,"nsim":500,"burnin":1000}
+{"gen":"r6","df":"f6","mod_sim":50,"p":2,"n":250,"delta":0.25,"indep":true,"nsim":500,"burnin":1000}

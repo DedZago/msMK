@@ -3,14 +3,11 @@ library(RcppArmadillo)
 library(Rcpp)
 library("reticulate")
 library(rjson)
-setwd("~/Documents/git/MSc-thesis/code/msMK")
+setwd("~/Documents/git/msMK")
 source("tests/tests.R")
 devtools::load_all()
 
-reticulate::py_install(c("numpy", "numpy-hilbert-curve"), pip = TRUE)
-reticulate::source_python("hilbertSplit.py")
-
-setwd("~/Documents/git/MSc-thesis/code/tests/estimation/")
+setwd("~/Documents/git/msMK/tests/estimation/")
 opts = fromJSON(file="settings.json")
 mod_sim = opts$mod_sim
 
@@ -37,7 +34,7 @@ for(i in 1:mod_sim){
     df = get(df.str)
   }
   
-  dir.str = paste0("~/Documents/git/MSc-thesis/code/tests/estimation/", opts$gen, "_", p)
+  dir.str = paste0("~/Documents/git/msMK/tests/estimation/", opts$gen, "_", p)
   if(!dir.exists(dir.str)){
     dir.create(dir.str)
     dir.create(paste0(dir.str, "/img"))
@@ -68,8 +65,8 @@ for(i in 1:mod_sim){
   mcmc <- list(nburn=nburn,nsave=nsave,nskip=nskip,ndisplay=ndisplay)
 
   # DP without hyperprior
-  # prior <- list(alpha=2.5, m1=mu0, psiinv1=sig0,
-  #                nu1=p, k0 = 1)
+  prior <- list(alpha=2.5, m1=mu0, psiinv1=sig0,
+                 nu1=p, k0 = 1)
 
   # DP plus hyperprior
   # prior <- list(a0=1,b0=1, m2=mu0, psiinv2=sig0,

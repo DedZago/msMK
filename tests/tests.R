@@ -425,6 +425,39 @@ r11_p = function(n, p){
   return(out[sample(1:NROW(out), NROW(out)), ])
 }
 
+f12_2 = function(x){
+  p = c(6, rep(1, 5))
+  p = p/sum(p)
+  out = p[1] * mvnfast::dmvn(x, c(0, 0), diag(2.5, nrow = 2, ncol = 2) + matrix(-0.5, nrow=2, ncol=2)) +
+    p[2] * dmvn(x, c(-2, 1), matrix(0.0015, nrow=2,ncol=2) + diag(0.005, nrow = 2, ncol = 2)) +
+    p[3] * dmvn(x, c(1, -1),  diag(0.008, nrow = 2, ncol = 2)) +
+    p[4] * dmvn(x, c(2, 1.5), matrix(-0.015, nrow=2,ncol=2) + diag(0.05, nrow = 2, ncol = 2)) +
+    p[5] * dmvn(x, c(2, 2), matrix(0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2)) +
+    p[6] * dmvn(x, c(2, -2), matrix(-0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2))
+  return(out)
+}
+
+r12_2 = function(n){
+  p = c(6, rep(1, 5))
+  p = p/sum(p)
+  idx = sample(0:(length(p)-1), size = n, replace = TRUE, prob = p)
+  n5 = sum(idx == 5)
+  n4 = sum(idx == 4)
+  n3 = sum(idx == 3)
+  n2 = sum(idx == 2)
+  n1 = sum(idx == 1)
+  n0 = sum(idx == 0)
+  
+  out = rbind(mvnfast::rmvn(n0, c(0, 0), diag(2.5, nrow = 2, ncol = 2) + matrix(-0.5, nrow=2, ncol=2)),
+    rmvn(n1, c(-2, 1), matrix(0.0015, nrow=2,ncol=2) + diag(0.005, nrow = 2, ncol = 2)),
+    rmvn(n2, c(1, -1), diag(0.008, nrow = 2, ncol = 2)),
+    rmvn(n3, c(2, 1.5), matrix(-0.015, nrow=2,ncol=2) + diag(0.05, nrow = 2, ncol = 2)),
+    rmvn(n4, c(2, 2), matrix(0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2)),
+    rmvn(n5, c(2, -2), matrix(-0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2))
+    )
+  
+  return(out[sample(1:NROW(out), NROW(out)), ])
+}
 #---- Density contour for a function f(x)
 densContour = function(f, y = NULL, npoints = 100,  xlim = c(-3, 3), ylim = c(-3, 3), ...){
   if(!is.null(y)){

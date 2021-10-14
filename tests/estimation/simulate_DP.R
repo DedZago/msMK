@@ -11,7 +11,8 @@ setwd("~/Documents/git/msMK/tests/estimation/")
 opts = fromJSON(file="settings.json")
 mod_sim = opts$mod_sim
 
-library(DPpackage)
+# library(DPpackage)
+library(BNPmix)
 
 lpml_mat = matrix(nrow = mod_sim, ncol = 2)
 for(i in 1:mod_sim){
@@ -62,12 +63,13 @@ for(i in 1:mod_sim){
   nsave <- nsim
   nskip <- 0
   ndisplay <- 100
-  mcmc <- list(nburn=nburn,nsave=nsave,nskip=nskip,ndisplay=ndisplay)
+  mcmc <- list(nburn=nburn,niter=nsave,model="LS",hyper=FALSE)
 
   # DP without hyperprior
-  prior <- list(alpha=2.5, m1=mu0, psiinv1=sig0,
-                 nu1=p, k0 = 1)
+  prior <- list(m0 = mu0, Sigma0 = sig0, n0=p+2)
 
+  grid <- expand.grid(seq(-7, 7, length.out = 50),
+                      seq(-7, 7, length.out = 50))
   # DP plus hyperprior
   # prior <- list(a0=1,b0=1, m2=mu0, psiinv2=sig0,
   #                nu1=p, nu2=p, 
@@ -80,7 +82,7 @@ for(i in 1:mod_sim){
   while( is.null(fit1.1) && attempt <= 50 ) {
     attempt <- attempt + 1
     try(
-        fit1.1 <- DPdensity(y, ngrid=1, prior=prior,mcmc=mcmc, state=state, status=TRUE)
+        fit1.1 <- PYdensity(y, prior=prior,mcmc=mcmc, output = list(grid=grid))
     )
   } 
 

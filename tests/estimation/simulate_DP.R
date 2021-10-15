@@ -50,7 +50,7 @@ for(i in 1:mod_sim){
   y.stand = y
   
   
-  name = paste0("i", i,"-DPfix")
+  name = paste0("i", i,"-PYfix")
 
   # Initial state
   state <- NULL
@@ -65,12 +65,12 @@ for(i in 1:mod_sim){
   ndisplay <- 100
   mcmc <- list(nburn=nburn,niter=nsave,model="LS",hyper=FALSE)
 
-  # DP without hyperprior
+  # PY without hyperprior
   prior <- list(m0 = mu0, Sigma0 = sig0, n0=p+2)
 
   grid <- expand.grid(seq(-7, 7, length.out = 50),
                       seq(-7, 7, length.out = 50))
-  # DP plus hyperprior
+  # PY plus hyperprior
   # prior <- list(a0=1,b0=1, m2=mu0, psiinv2=sig0,
   #                nu1=p, nu2=p, 
   #                s2 = diag(1, nrow=p),
@@ -93,15 +93,15 @@ for(i in 1:mod_sim){
   lpml_dp = mean(log(fit1.1$cpo))
   lpml_true = lpml(y.stand, df)
   lpml_mat[i, ] = c(lpml_dp, lpml_true)
-  colnames(lpml_mat) = c("DP", "True")
+  colnames(lpml_mat) = c("PY", "True")
   cat("Done", "\n\n")
 }
-save(lpml_mat, file=paste0("lpml-DPfix-n", n,".Rdata"))
+save(lpml_mat, file=paste0("lpml-PYfix-n", n,".Rdata"))
 lpml_mean = as.matrix(apply(lpml_mat, 2, mean, na.rm = TRUE))
 lpml_sd = as.matrix(apply(lpml_mat, 2, sd, na.rm = TRUE))
 library(magrittr)
 library(kableExtra)
-tab_name = paste0("lpml-DPfix-n", n)
+tab_name = paste0("lpml-PYfix-n", n)
 cbind(lpml_mean, lpml_sd) %>%
   set_colnames(c("lpml", "sd")) %>%
   kbl("latex", booktabs = TRUE, escape = FALSE,

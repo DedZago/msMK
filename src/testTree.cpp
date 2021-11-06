@@ -45,14 +45,10 @@ Rcpp::List msMK_mcmc_test(
     vector<double> prob = computeProb(Stree, Rtree, a, b);
     
     // Store thresholds from numpy matrices
-    cube thrs(p, p, nelem);
+    cube thrs(2, p, nelem);
     
     for(int i = 0; i < nelem; ++i){
-        mat temp_thrs(2, p, fill::zeros);
-        temp_thrs.row(0) = lbNumpy.row(i); 
-        // Rcout << lbNumpy.row(i);
-        temp_thrs.row(1) = ubNumpy.row(i); 
-        // Rcout << ubNumpy.row(i);
+        mat temp_thrs = join_vert(lbNumpy.row(i), ubNumpy.row(i));
         thrs.slice(i) = temp_thrs;
     }
     

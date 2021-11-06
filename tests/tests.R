@@ -428,12 +428,12 @@ r11_p = function(n, p){
 f12_2 = function(x){
   p = c(6, rep(1, 5))
   p = p/sum(p)
-  out = p[1] * mvnfast::dmvn(x, c(0, 0), diag(2.5, nrow = 2, ncol = 2) + matrix(-0.5, nrow=2, ncol=2)) +
+  out = p[1] * mvnfast::dmvn(x, c(0, 0), diag(2.5, nrow = 2, ncol = 2) + matrix(0.5, nrow=2, ncol=2)) +
     p[2] * dmvn(x, c(-2, 1), matrix(0.0015, nrow=2,ncol=2) + diag(0.005, nrow = 2, ncol = 2)) +
     p[3] * dmvn(x, c(1, -1),  diag(0.008, nrow = 2, ncol = 2)) +
-    p[4] * dmvn(x, c(2, 1.5), matrix(-0.015, nrow=2,ncol=2) + diag(0.05, nrow = 2, ncol = 2)) +
+    p[4] * dmvn(x, c(2, 1.5), matrix(0.015, nrow=2,ncol=2) + diag(0.05, nrow = 2, ncol = 2)) +
     p[5] * dmvn(x, c(2, 2), matrix(0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2)) +
-    p[6] * dmvn(x, c(2, -2), matrix(-0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2))
+    p[6] * dmvn(x, c(2, -2), matrix(0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2))
   return(out)
 }
 
@@ -448,12 +448,46 @@ r12_2 = function(n){
   n1 = sum(idx == 1)
   n0 = sum(idx == 0)
   
-  out = rbind(mvnfast::rmvn(n0, c(0, 0), diag(2.5, nrow = 2, ncol = 2) + matrix(-0.5, nrow=2, ncol=2)),
+  out = rbind(mvnfast::rmvn(n0, c(0, 0), diag(2.5, nrow = 2, ncol = 2) + matrix(0.5, nrow=2, ncol=2)),
     rmvn(n1, c(-2, 1), matrix(0.0015, nrow=2,ncol=2) + diag(0.005, nrow = 2, ncol = 2)),
     rmvn(n2, c(1, -1), diag(0.008, nrow = 2, ncol = 2)),
-    rmvn(n3, c(2, 1.5), matrix(-0.015, nrow=2,ncol=2) + diag(0.05, nrow = 2, ncol = 2)),
+    rmvn(n3, c(2, 1.5), matrix(0.015, nrow=2,ncol=2) + diag(0.05, nrow = 2, ncol = 2)),
     rmvn(n4, c(2, 2), matrix(0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2)),
-    rmvn(n5, c(2, -2), matrix(-0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2))
+    rmvn(n5, c(2, -2), matrix(0.035, nrow=2,ncol=2) + diag(0.1, nrow = 2, ncol = 2))
+    )
+  
+  return(out[sample(1:NROW(out), NROW(out)), ])
+}
+
+f12_p = function(x, p){
+  pi = c(6, rep(1, 5))
+  pi = pi/sum(pi)
+  out = pi[1] * mvnfast::dmvn(x, c(0, 0, rep(0, p-2)), diag(2.5, nrow = p, ncol = p) + matrix(0.5, nrow=p, ncol=p)) +
+    pi[2] * dmvn(x, c(-2, 1, rep(0, p-2)), matrix(0.0015, nrow=p,ncol=p) + diag(0.005, nrow = p, ncol = p)) +
+    pi[3] * dmvn(x, c(1, -1, rep(0, p-2)),  diag(0.008, nrow = p, ncol = p)) +
+    pi[4] * dmvn(x, c(2, 1.5, rep(0, p-2)), matrix(0.015, nrow=p,ncol=p) + diag(0.05, nrow = p, ncol = p)) +
+    pi[5] * dmvn(x, c(2, 2, rep(0, p-2)), matrix(0.035, nrow=p,ncol=p) + diag(0.1, nrow = p, ncol = p)) +
+    pi[6] * dmvn(x, c(2, -2, rep(0, p-2)), matrix(0.035, nrow=p,ncol=p) + diag(0.1, nrow = p, ncol = p))
+  return(out)
+}
+
+r12_p = function(n, p){
+  pi = c(6, rep(1, 5))
+  pi = pi/sum(pi)
+  idx = sample(0:(length(pi)-1), size = n, replace = TRUE, prob = pi)
+  n5 = sum(idx == 5)
+  n4 = sum(idx == 4)
+  n3 = sum(idx == 3)
+  n2 = sum(idx == 2)
+  n1 = sum(idx == 1)
+  n0 = sum(idx == 0)
+  
+  out = rbind(mvnfast::rmvn(n0, c(0, 0, rep(0, p-2)), diag(2.5, nrow = p, ncol = p) + matrix(0.5, nrow=p, ncol=p)),
+    rmvn(n1, c(-2, 1, rep(0, p-2)), matrix(0.0015, nrow=p,ncol=p) + diag(0.005, nrow = p, ncol = p)),
+    rmvn(n2, c(1, -1, rep(0, p-2)), diag(0.008, nrow = p, ncol = p)),
+    rmvn(n3, c(2, 1.5, rep(0, p-2)), matrix(0.015, nrow=p,ncol=p) + diag(0.05, nrow = p, ncol = p)),
+    rmvn(n4, c(2, 2, rep(0, p-2)), matrix(0.035, nrow=p,ncol=p) + diag(0.1, nrow = p, ncol = p)),
+    rmvn(n5, c(2, -2, rep(0, p-2)), matrix(0.035, nrow=p,ncol=p) + diag(0.1, nrow = p, ncol = p))
     )
   
   return(out[sample(1:NROW(out), NROW(out)), ])

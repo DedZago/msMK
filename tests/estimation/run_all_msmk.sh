@@ -24,4 +24,8 @@ sleep 8s
 jq -c '.gen = "r11"' settings.json > tmp.$$.json && mv tmp.$$.json settings.json
 jq -c '.df = "f11"' settings.json > tmp.$$.json && mv tmp.$$.json settings.json
 gnome-terminal -- Rscript simulate.R &
+sleep 8s
+jq -c '.gen = "r12"' settings.json > tmp.$$.json && mv tmp.$$.json settings.json
+jq -c '.df = "f12"' settings.json > tmp.$$.json && mv tmp.$$.json settings.json
+gnome-terminal -- Rscript simulate.R &
 wait

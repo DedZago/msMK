@@ -1,3 +1,4 @@
+pacman::p_load("devtools", "RcppArmadillo", "Rcpp", "reticulate", "rjson", "BNPmix")
 library("devtools")
 library(RcppArmadillo)
 library(Rcpp)
@@ -60,10 +61,10 @@ for(i in 1:mod_sim){
   sig0 = diag(apply(y, 2, var))
 
   nburn <- burnin
-  nsave <- nsim
+  nsave <- nsim + burnin
   nskip <- 0
   ndisplay <- 100
-  mcmc <- list(nburn=nburn,niter=nsave,model="LS",hyper=FALSE)
+  mcmc <- list(nburn=nburn,niter=nsave,method="ICS",hyper=FALSE)
 
   # PY without hyperprior
   prior <- list(m0 = mu0, Sigma0 = sig0, n0=p+2)
@@ -82,7 +83,7 @@ for(i in 1:mod_sim){
   while( is.null(fit1.1) && attempt <= 50 ) {
     attempt <- attempt + 1
     try(
-        fit1.1 <- PYdensity(y, prior=prior,mcmc=mcmc, output = list(grid=grid))
+        fit1.1 <- PYdensity(y, prior=prior,mcmc=mcmc, output=list(grid=data.frame(y)))
     )
   } 
 

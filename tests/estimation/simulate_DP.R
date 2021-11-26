@@ -15,6 +15,15 @@ mod_sim = opts$mod_sim
 # library(DPpackage)
 library(BNPmix)
 
+BNPmix.cpo = function(mcmc){
+  cpo = colMeans(1/mcmc$density)^(-1)
+  return(cpo)
+}
+
+BNPmix.lpml = function(mcmc){
+  mean(log(BNPmix.cpo(mcmc)))
+}
+
 lpml_mat = matrix(nrow = mod_sim, ncol = 2)
 for(i in 1:mod_sim){
   delta = opts$delta
@@ -91,7 +100,7 @@ for(i in 1:mod_sim){
   cat("Done", "\n\n")
   
   cat("Calculating LPML", "\n")
-  lpml_dp = mean(log(fit1.1$cpo))
+  lpml_dp = BNPmix.lpml(fit1.1)
   lpml_true = lpml(y.stand, df)
   lpml_mat[i, ] = c(lpml_dp, lpml_true)
   colnames(lpml_mat) = c("PY", "True")

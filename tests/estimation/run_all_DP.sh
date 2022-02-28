@@ -18,10 +18,6 @@
 #         done
 #     done
 # done
-jq -c '.gen = "r6"' settings.json > tmp.$$.json && mv tmp.$$.json settings.json
-jq -c '.df = "f6"' settings.json > tmp.$$.json && mv tmp.$$.json settings.json
-gnome-terminal -- Rscript simulate_DP.R &
-sleep 5s
 jq -c '.gen = "r7"' settings.json > tmp.$$.json && mv tmp.$$.json settings.json
 jq -c '.df = "f7"' settings.json > tmp.$$.json && mv tmp.$$.json settings.json
 gnome-terminal -- Rscript simulate_DP.R &

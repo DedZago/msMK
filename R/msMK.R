@@ -63,14 +63,12 @@ posterior_predict_msMK = function(mcmc, y, ndraws = NULL){
       prob = mcmc$prob[[b]]
       idx = sample(1:length(prob), size = n, prob = prob, replace = TRUE)
       
-      for(i in 1:length(TH)){
+      for(i in 1:length(prob)){
         idx_i = (idx == i)
         n_i = sum(idx_i)
         if(n_i != 0){
-          theta = as.vector(TH[[i]])
-          sigma = SIG[[i]]
-          lb = thrs[[i]][1, ]
-          ub = thrs[[i]][2, ]
+          theta = as.vector(TH[, i])
+          sigma = SIG[, , i]
           out[idx_i, , b - burnin] = mvtnorm::rmvnorm(n_i, theta, sigma)
         }
       }
@@ -85,14 +83,12 @@ posterior_predict_msMK = function(mcmc, y, ndraws = NULL){
       prob = mcmc$prob[[b]]
       idx = sample(1:length(prob), size = n, prob = prob, replace = TRUE)
       
-      for(i in 1:length(TH)){
+      for(i in 1:length(prob)){
         idx_i = (idx == i)
         n_i = sum(idx_i)
         if(n_i != 0){
-          theta = as.vector(TH[[i]])
-          sigma = SIG[[i]]
-          lb = thrs[[i]][1, ]
-          ub = thrs[[i]][2, ]
+          theta = as.vector(TH[, i])
+          sigma = SIG[ , , i]
           out[idx_i, , j] = mvtnorm::rmvnorm(n_i, theta, sigma)
         }
       }

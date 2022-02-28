@@ -17,39 +17,41 @@ opts = fromJSON(file="settings.json")
 mod_sim = opts$mod_sim
 
 lpml_mat = matrix(nrow = mod_sim, ncol = 2)
+
+delta = opts$delta
+indep = opts$indep
+nsim = opts$nsim
+burnin = opts$burnin
+p = as.integer(opts$p)
+n = as.integer(opts$n)
+
+
+if(p > 2){
+  gen.str = paste0(opts$gen, "_p" )
+  df.str = paste0(opts$df, "_p")
+  gen = function(n) get(gen.str)(n, p = p)
+  df = function(x) get(df.str)(x, p = p)
+} else if (p == 2){
+  gen.str = paste0(opts$gen, "_2" )
+  df.str = paste0(opts$df, "_2")
+  gen = get(gen.str)
+  df = get(df.str)
+}
+
+dir.str = paste0("~/Documents/git/msMK/tests/estimation/", opts$gen, "_", p)
+if(!dir.exists(dir.str)){
+  dir.create(dir.str)
+  dir.create(paste0(dir.str, "/img"))
+  dir.create(paste0(dir.str, "/tex"))
+}
+setwd(dir.str)
+  
 for(i in 1:mod_sim){
-  delta = opts$delta
-  indep = opts$indep
-  nsim = opts$nsim
-  burnin = opts$burnin
-  p = as.integer(opts$p)
-  n = as.integer(opts$n)
-
-
-  if(p > 2){
-    gen.str = paste0(opts$gen, "_p" )
-    df.str = paste0(opts$df, "_p")
-    gen = function(n) get(gen.str)(n, p = p)
-    df = function(x) get(df.str)(x, p = p)
-  } else if (p == 2){
-    gen.str = paste0(opts$gen, "_2" )
-    df.str = paste0(opts$df, "_2")
-    gen = get(gen.str)
-    df = get(df.str)
-  }
-  
-  dir.str = paste0("~/Documents/git/msMK/tests/estimation/", opts$gen, "_", p)
-  if(!dir.exists(dir.str)){
-    dir.create(dir.str)
-    dir.create(paste0(dir.str, "/img"))
-    dir.create(paste0(dir.str, "/tex"))
-  }
-  setwd(dir.str)
-  
   # Skip if already saved model
   name = paste0("i", i,"-ind", indep,"-n",n)
   if(file.exists(paste0(name, ".Rdata"))){
     print(i)
+    load(paste0(name, ".Rdata"))
     next
   }
   

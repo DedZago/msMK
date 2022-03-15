@@ -1,0 +1,19 @@
+[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
+[0] Config.pm:307> INFO - Logfile is 'build/articolo-msMK.blg'
+[53] biber:322> INFO - === Mon Feb 28, 2022, 17:15:11
+[68] Biber.pm:415> INFO - Reading 'build/articolo-msMK.bcf'
+[118] Biber.pm:943> INFO - Found 9 citekeys in bib section 0
+[127] Biber.pm:4256> INFO - Processing section 0
+[127] Utils.pm:75> INFO - Globbing data source 'biblio.bib'
+[127] Utils.pm:91> INFO - Globbed data source 'biblio.bib' to biblio.bib
+[134] Biber.pm:4455> INFO - Looking for bibtex format file 'biblio.bib' for section 0
+[182] bibtex.pm:1653> INFO - LaTeX decoding ...
+[1131] bibtex.pm:1471> INFO - Found BibTeX data source 'biblio.bib'
+[1199] Utils.pm:293> WARN - I didn't find a database entry for 'ferguson1983' (section 0)
+[1211] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1211] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1211] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1211] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[1217] bbl.pm:652> INFO - Writing 'build/articolo-msMK.bbl' with encoding 'UTF-8'
+[1222] bbl.pm:755> INFO - Output to build/articolo-msMK.bbl
+[1222] Biber.pm:128> INFO - WARNINGS: 1

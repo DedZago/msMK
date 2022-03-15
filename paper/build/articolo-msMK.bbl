@@ -1,0 +1,393 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{canale2016b}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=84cc52f1cea6243411c3fb97527cac48}{%
+           family={Canale},
+           familyi={C\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84545b54e408a7eba6bf9280fd2eaae7}{%
+           family={Dunson},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Statistical Science, Academia Sinica}%
+      }
+      \strng{namehash}{786913d265bb4728b7f851f8c31ce779}
+      \strng{fullhash}{786913d265bb4728b7f851f8c31ce779}
+      \strng{bibnamehash}{786913d265bb4728b7f851f8c31ce779}
+      \strng{authorbibnamehash}{786913d265bb4728b7f851f8c31ce779}
+      \strng{authornamehash}{786913d265bb4728b7f851f8c31ce779}
+      \strng{authorfullhash}{786913d265bb4728b7f851f8c31ce779}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Our focus is on constructing a multiscale nonparametric prior for densities. The Bayes density estimation literature is dominated by single scale methods, with the exception of Polya trees, which favor overly-spiky densities even when the truth is smooth. We propose a multiscale Bernstein polynomial family of priors, which produce smooth realizations that do not rely on hard partitioning of the support. At each level in an infinitely-deep binary tree, we place a beta dictionary density; within a scale the densities are equivalent to Bernstein polynomials. Using a stick-breaking characterization, stochastically decreasing weights are allocated to the finer scale dictionary elements. A slice sampler is used for posterior computation, and properties are described. The method characterizes densities with locally-varying smoothness, and can produce a sequence of coarse to fine density estimates. An extension for Bayesian testing of group differences is introduced and applied to DNA methylation array data.}
+      \field{issn}{1017-0405}
+      \field{journaltitle}{Statistica Sinica}
+      \field{number}{3}
+      \field{title}{Multiscale {{Bernstein}} Polynomials for Densities}
+      \field{volume}{26}
+      \field{year}{2016}
+      \field{pages}{1175\bibrangedash 1195}
+      \range{pages}{21}
+      \keyw{done}
+    \endentry
+    \entry{hilbert1891}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=75b05ce956b23032ea66e4c981e8f28a}{%
+           family={Hilbert},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{75b05ce956b23032ea66e4c981e8f28a}
+      \strng{fullhash}{75b05ce956b23032ea66e4c981e8f28a}
+      \strng{bibnamehash}{75b05ce956b23032ea66e4c981e8f28a}
+      \strng{authorbibnamehash}{75b05ce956b23032ea66e4c981e8f28a}
+      \strng{authornamehash}{75b05ce956b23032ea66e4c981e8f28a}
+      \strng{authorfullhash}{75b05ce956b23032ea66e4c981e8f28a}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1432-1807}
+      \field{journaltitle}{Mathematische Annalen}
+      \field{langid}{german}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{{Über die stetige Abbildung einer Line auf ein Flächenstück}}
+      \field{volume}{38}
+      \field{year}{1891}
+      \field{pages}{459\bibrangedash 460}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1007/BF01199431
+      \endverb
+      \verb{file}
+      \verb /home/dede/Documents/MEGA/universita/zotero-pdf/Hilbert_1891_Über_die_stetige_Abbildung_einer_Line_auf_ein_Flächenstück.pdf
+      \endverb
+      \keyw{done}
+    \endentry
+    \entry{ishwaran2001}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=87b2e79f8f2ab0a4040e84b52fbe2710}{%
+           family={Ishwaran},
+           familyi={I\bibinitperiod},
+           given={Hemant},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a26b7c6744bb8463c9dcb4edf75a2534}{%
+           family={James},
+           familyi={J\bibinitperiod},
+           given={Lancelot\bibnamedelima F.},
+           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{91c8d6fad86178e9a39bc704249d9785}
+      \strng{fullhash}{91c8d6fad86178e9a39bc704249d9785}
+      \strng{bibnamehash}{91c8d6fad86178e9a39bc704249d9785}
+      \strng{authorbibnamehash}{91c8d6fad86178e9a39bc704249d9785}
+      \strng{authornamehash}{91c8d6fad86178e9a39bc704249d9785}
+      \strng{authorfullhash}{91c8d6fad86178e9a39bc704249d9785}
+      \field{sortinit}{I}
+      \field{sortinithash}{9417e9a1288a9371e2691d999083ed39}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A rich and flexible class of random probability measures, which we call stick-breaking priors, can be constructed using a sequence of independent beta random variables. Examples of random measures that have this characterization include the Dirichlet process, its two-parameter extension, the two-parameter Poisson–Dirichlet process, finite dimensional Dirichlet priors, and beta two-parameter processes. The rich nature of stick-breaking priors offers Bayesians a useful class of priors for nonparametric problems, while the similar construction used in each prior can be exploited to develop a general computational procedure for fitting them. In this article we present two general types of Gibbs samplers that can be used to fit posteriors of Bayesian hierarchical models based on stick-breaking priors. The first type of Gibbs sampler, referred to as a Pólya urn Gibbs sampler, is a generalized version of a widely used Gibbs sampling method currently employed for Dirichlet process computing. This method applies to stick-breaking priors with a known Pólya urn characterization, that is, priors with an explicit and simple prediction rule. Our second method, the blocked Gibbs sampler, is based on an entirely different approach that works by directly sampling values from the posterior of the random measure. The blocked Gibbs sampler can be viewed as a more general approach because it works without requiring an explicit prediction rule. We find that the blocked Gibbs avoids some of the limitations seen with the Pólya urn approach and should be simpler for nonexperts to use.}
+      \field{annotation}{\_eprint: https://doi.org/10.1198/016214501750332758}
+      \field{issn}{0162-1459}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{month}{3}
+      \field{number}{453}
+      \field{title}{Gibbs {{Sampling Methods}} for {{Stick}}-{{Breaking Priors}}}
+      \field{volume}{96}
+      \field{year}{2001}
+      \field{pages}{161\bibrangedash 173}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1198/016214501750332758
+      \endverb
+      \verb{file}
+      \verb /home/dede/Documents/MEGA/universita/zotero-pdf/Ishwaran_James_2001_Gibbs_Sampling_Methods_for_Stick-Breaking_Priors.pdf;/home/dede/Zotero/storage/JYEB9S4X/016214501750332758.html
+      \endverb
+      \keyw{Blocked Gibbs sampler,Dirichlet process,Generalized Dirichlet distribution,Pitman–Yor process,Pólya urn Gibbs sampler,Prediction rule,Random probability measure,Random weights,Stable law,todo}
+    \endentry
+    \entry{kalli2011}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=28de935dce25ea8d7d76c4684305a25f}{%
+           family={Kalli},
+           familyi={K\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c38a52d84200dfe3796faa110a43fdd4}{%
+           family={Griffin},
+           familyi={G\bibinitperiod},
+           given={Jim\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=60d1ecb6eacbe89083d161ac22ed1063}{%
+           family={Walker},
+           familyi={W\bibinitperiod},
+           given={Stephen\bibnamedelima G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b70619689a5cdae5458d8c213614feda}
+      \strng{fullhash}{b70619689a5cdae5458d8c213614feda}
+      \strng{bibnamehash}{b70619689a5cdae5458d8c213614feda}
+      \strng{authorbibnamehash}{b70619689a5cdae5458d8c213614feda}
+      \strng{authornamehash}{b70619689a5cdae5458d8c213614feda}
+      \strng{authorfullhash}{b70619689a5cdae5458d8c213614feda}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0960-3174, 1573-1375}
+      \field{journaltitle}{Statistics and Computing}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Slice Sampling Mixture Models}
+      \field{volume}{21}
+      \field{year}{2011}
+      \field{pages}{93\bibrangedash 105}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/s11222-009-9150-y
+      \endverb
+      \verb{file}
+      \verb /home/dede/Documents/MEGA/universita/zotero-pdf/Kalli_et_al_2011_Slice_sampling_mixture_models.pdf
+      \endverb
+      \keyw{todo}
+    \endentry
+    \entry{moon2001}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=0ad97e2a15f4360d291c296d1a89d8b8}{%
+           family={Moon},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b066a3797733e842759d55ee617b1671}{%
+           family={Jagadish},
+           familyi={J\bibinitperiod},
+           given={H.V.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42284d32872b35ace6f5473f761e99f0}{%
+           family={Faloutsos},
+           familyi={F\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6a5980b8e986659e96ac86727843a6e7}{%
+           family={Saltz},
+           familyi={S\bibinitperiod},
+           given={J.H.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb6e6f684a4b3d65e7f946e71528d1e7}
+      \strng{fullhash}{48c634524f99d02751fbad2579326eca}
+      \strng{bibnamehash}{eb6e6f684a4b3d65e7f946e71528d1e7}
+      \strng{authorbibnamehash}{eb6e6f684a4b3d65e7f946e71528d1e7}
+      \strng{authornamehash}{eb6e6f684a4b3d65e7f946e71528d1e7}
+      \strng{authorfullhash}{48c634524f99d02751fbad2579326eca}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Several schemes for the linear mapping of a multidimensional space have been proposed for various applications, such as access methods for spatio-temporal databases and image compression. In these applications, one of the most desired properties from such linear mappings is clustering, which means the locality between objects in the multidimensional space being preserved in the linear space. It is widely believed that the Hilbert space-filling curve achieves the best clustering (Abel and Mark, 1990; Jagadish, 1990). We analyze the clustering property of the Hilbert space-filling curve by deriving closed-form formulas for the number of clusters in a given query region of an arbitrary shape (e.g., polygons and polyhedra). Both the asymptotic solution for the general case and the exact solution for a special case generalize previous work. They agree with the empirical results that the number of clusters depends on the hypersurface area of the query region and not on its hypervolume. We also show that the Hilbert curve achieves better clustering than the z curve. From a practical point of view, the formulas given provide a simple measure that can be used to predict the required disk access behaviors and, hence, the total access time.}
+      \field{issn}{1558-2191}
+      \field{journaltitle}{IEEE Transactions on Knowledge and Data Engineering}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Analysis of the Clustering Properties of the {{Hilbert}} Space-Filling Curve}
+      \field{volume}{13}
+      \field{year}{2001}
+      \field{pages}{124\bibrangedash 141}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1109/69.908985
+      \endverb
+      \verb{file}
+      \verb /home/dede/Zotero/storage/NFSCCAFE/Moon et al_2001_Analysis of the clustering properties of the Hilbert space-filling curve.pdf;/home/dede/Zotero/storage/958ZTR2I/908985.html
+      \endverb
+      \keyw{Fractals,Geographic Information Systems,Helium,Hilbert space,Image coding,Image databases,Moon,Multidimensional systems,Shape,Time measurement,todo}
+    \endentry
+    \entry{pitman1997}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=081ad72db47fd3469ec24c44f405d377}{%
+           family={Pitman},
+           familyi={P\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1e58f52d7501e0df28f20cd5871cbc80}{%
+           family={Yor},
+           familyi={Y\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Mathematical Statistics}%
+      }
+      \strng{namehash}{dbe38545a7ab0d049b1dab064a8499b8}
+      \strng{fullhash}{dbe38545a7ab0d049b1dab064a8499b8}
+      \strng{bibnamehash}{dbe38545a7ab0d049b1dab064a8499b8}
+      \strng{authorbibnamehash}{dbe38545a7ab0d049b1dab064a8499b8}
+      \strng{authornamehash}{dbe38545a7ab0d049b1dab064a8499b8}
+      \strng{authorfullhash}{dbe38545a7ab0d049b1dab064a8499b8}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The two-parameter Poisson-Dirichlet distribution, denoted \$\textbackslash mathsf\{PD\}(\textbackslash alpha, \textbackslash theta)\$ is a probability distribution on the set of decreasing positive sequences with sum 1. The usual Poisson-Dirichlet distribution with a single parameter \$\textbackslash theta\$, introduced by Kingman, is \$\textbackslash mathsf\{PD\}(0, \textbackslash theta)\$. Known properties of \$\textbackslash mathsf\{PD\}(0, \textbackslash theta)\$, including the Markov chain description due to Vershik, Shmidt and Ignatov, are generalized to the two-parameter case. The size-biased random permutation of \$\textbackslash mathsf\{PD\}(\textbackslash alpha, \textbackslash theta)\$ is a simple residual allocation model proposed by Engen in the context of species diversity, and rediscovered by Perman and the authors in the study of excursions of Brownian motion and Bessel processes. For \$0 {$<$} \textbackslash alpha {$<$} 1, \textbackslash mathsf\{PD\}(\textbackslash alpha, 0)\$ is the asymptotic distribution of ranked lengths of excursions of a Markov chain away from a state whose recurrence time distribution is in the domain of attraction of a stable law of index \$\textbackslash alpha\$. Formulae in this case trace back to work of Darling, Lamperti and Wendel in the 1950s and 1960s. The distribution of ranked lengths of excursions of a one-dimensional Brownian motion is \$\textbackslash mathsf\{PD\}(1/2, 0)\$, and the corresponding distribution for a Brownian bredge is \$\textbackslash mathsf\{PD\}(1/2, 1/2)\$. The \$\textbackslash mathsf\{PD\}(\textbackslash alpha, 0)\$ and \$\textbackslash mathsf\{PD\}(\textbackslash alpha, \textbackslash alpha)\$ distributions admit a similar interpretation in terms of the ranked lengths of excursions of a semistable Markov process whose zero set is the range of a stable subordinator of index \$\textbackslash alpha\$.}
+      \field{issn}{0091-1798, 2168-894X}
+      \field{journaltitle}{The Annals of Probability}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{The Two-Parameter {{Poisson}}-{{Dirichlet}} Distribution Derived from a Stable Subordinator}
+      \field{volume}{25}
+      \field{year}{1997}
+      \field{pages}{855\bibrangedash 900}
+      \range{pages}{46}
+      \verb{doi}
+      \verb 10.1214/aop/1024404422
+      \endverb
+      \verb{file}
+      \verb /home/dede/Documents/MEGA/universita/zotero-pdf/Pitman_Yor_1997_The_two-parameter_Poisson-Dirichlet_distribution_derived_from_a_stable.pdf;/home/dede/Zotero/storage/PGKVASIY/1024404422.html
+      \endverb
+      \keyw{60E99,60G57,60J30,Local time,Poisson point process,ranked lengths of excursions,semistable Markov process,Zero set}
+    \endentry
+    \entry{sethuraman1994}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5610b62bb3ef391bd67399a3ee83e0b0}{%
+           family={Sethuraman},
+           familyi={S\bibinitperiod},
+           given={Jayaram},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Statistical Science, Academia Sinica}%
+      }
+      \strng{namehash}{5610b62bb3ef391bd67399a3ee83e0b0}
+      \strng{fullhash}{5610b62bb3ef391bd67399a3ee83e0b0}
+      \strng{bibnamehash}{5610b62bb3ef391bd67399a3ee83e0b0}
+      \strng{authorbibnamehash}{5610b62bb3ef391bd67399a3ee83e0b0}
+      \strng{authornamehash}{5610b62bb3ef391bd67399a3ee83e0b0}
+      \strng{authorfullhash}{5610b62bb3ef391bd67399a3ee83e0b0}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we give a simple and new constructive definition of Dirichlet measures removing the restriction that the basic space should be Rk. We also give complete, self contained proofs of the three basic results for Dirichlet measures: 1. The Dirichlet measure is a probability measure on the space of all probability measures. 2. It gives probability one to the subset of discrete probability measures. 3. The posterior distribution is also a Dirichlet measure.}
+      \field{issn}{1017-0405}
+      \field{journaltitle}{Statistica Sinica}
+      \field{number}{2}
+      \field{title}{A {{Constructive Definition}} of {{Dirichlet Priors}}}
+      \field{volume}{4}
+      \field{year}{1994}
+      \field{pages}{639\bibrangedash 650}
+      \range{pages}{12}
+      \verb{file}
+      \verb /home/dede/Documents/MEGA/universita/zotero-pdf/Sethuraman_1994_A_Constructive_Definition_of_Dirichlet_Priors.pdf
+      \endverb
+      \keyw{todo}
+    \endentry
+    \entry{stefanucci2021}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=93a95dfba421c436f490a75c64e64509}{%
+           family={Stefanucci},
+           familyi={S\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84cc52f1cea6243411c3fb97527cac48}{%
+           family={Canale},
+           familyi={C\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{99f87efe6f216874689a297654af5fab}
+      \strng{fullhash}{99f87efe6f216874689a297654af5fab}
+      \strng{bibnamehash}{99f87efe6f216874689a297654af5fab}
+      \strng{authorbibnamehash}{99f87efe6f216874689a297654af5fab}
+      \strng{authornamehash}{99f87efe6f216874689a297654af5fab}
+      \strng{authorfullhash}{99f87efe6f216874689a297654af5fab}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Bayesian nonparametric density estimation is dominated by single-scale methods, typically exploiting mixture model specifications, exception made for Pólya trees prior and allied approaches. In this paper we focus on developing a novel family of multiscale stick-breaking mixture models that inherits some of the advantages of both single-scale nonparametric mixtures and Pólya trees. Our proposal is based on a mixture specification exploiting an infinitely deep binary tree of random weights that grows according to a multiscale generalization of a large class of stick-breaking processes; this multiscale stick-breaking is paired with specific stochastic processes generating sequences of parameters that induce stochastically ordered kernel functions. Properties of this family of multiscale stick-breaking mixtures are described. Focusing on a Gaussian specification, a Markov Chain Monte Carlo algorithm for posterior computation is introduced. The performance of the method is illustrated analyzing both synthetic and real datasets consistently showing competitive results both in scenarios favoring single-scale and multiscale methods. The results suggest that the method is well suited to estimate densities with varying degree of smoothness and local features.}
+      \field{issn}{1573-1375}
+      \field{journaltitle}{Statistics and Computing}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{2}
+      \field{title}{Multiscale Stick-Breaking Mixture Models}
+      \field{volume}{31}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.1007/s11222-020-09991-1
+      \endverb
+      \verb{file}
+      \verb /home/dede/Documents/MEGA/universita/zotero-pdf/Stefanucci_Canale_2021_Multiscale_stick-breaking_mixture_models.pdf
+      \endverb
+      \keyw{done}
+    \endentry
+  \enddatalist
+  \missing{ferguson1983}
+\endrefsection
+\endinput
+

@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Multiscale mixture models}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Mixture weights}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Kernel parameters}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Scale parameters}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Location parameters}{subsection.2.2}% 6
+\BOOKMARK [1][-]{section.3}{Posterior computation}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Product kernel}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Full-covariance kernel}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Simulation study}{}% 10
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 11

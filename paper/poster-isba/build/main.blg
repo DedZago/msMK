@@ -1,0 +1,19 @@
+[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
+[0] Config.pm:307> INFO - Logfile is 'build/main.blg'
+[36] biber:322> INFO - === mer giu  8, 2022, 15:01:03
+[43] Biber.pm:415> INFO - Reading 'build/main.bcf'
+[79] Biber.pm:943> INFO - Found 1 citekeys in bib section 0
+[86] Biber.pm:4256> INFO - Processing section 0
+[86] Utils.pm:75> INFO - Globbing data source 'biblio.bib'
+[86] Utils.pm:91> INFO - Globbed data source 'biblio.bib' to biblio.bib
+[91] Biber.pm:4455> INFO - Looking for bibtex format file 'biblio.bib' for section 0
+[168] bibtex.pm:1653> INFO - LaTeX decoding ...
+[1664] bibtex.pm:1471> INFO - Found BibTeX data source 'biblio.bib'
+[1687] Utils.pm:293> WARN - Duplicate entry key: 'lall2021' in file 'biblio.bib', skipping ...
+[1723] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1723] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1723] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1723] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[1724] bbl.pm:652> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
+[1725] bbl.pm:755> INFO - Output to build/main.bbl
+[1725] Biber.pm:128> INFO - WARNINGS: 1

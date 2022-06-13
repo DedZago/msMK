@@ -64,6 +64,8 @@
     \import{./figures/}{#2.pdf_tex}
 }
 
+\RequirePackage{bbm}        % indicator function
+
 \usepackage{statmacros}
 \begin{document}
 
@@ -119,59 +121,59 @@ Joint work with Antonio Canale,  University of Padova \& Marco Stefanucci, Sapie
 %----------------------------------------------------------------------------------------
 
 
-\section*{Motivating application}
-\color{Black}
-\begin{itemize}
-\item[] We focus on relating {\bf \textsc{dde} exposure}, henceforth $x$, in pregnant women to the risk of a {\bf premature delivery} (Longnecker et al., 2001)
-\item[] The data set is obtained from a sub-study of the US Collaborative Perinatal Project (CPP) 
-\item[] The values of $x$ are measured in $n$ pregnant women and $y$ is their gestational age at delivery
-\item[] Figure 1 shows the histogram of $y$ for interval of $x$ {\color{blue} (warning: spoiler ahead!)}
-\end{itemize}
+%\section*{Motivating application}
+%\color{Black}
+%\begin{itemize}
+%\item[] We focus on relating {\bf \textsc{dde} exposure}, henceforth $x$, in pregnant women to the risk of a {\bf premature delivery} (Longnecker et al., 2001)
+%\item[] The data set is obtained from a sub-study of the US Collaborative Perinatal Project (CPP) 
+%\item[] The values of $x$ are measured in $n$ pregnant women and $y$ is their gestational age at delivery
+%\item[] Figure 1 shows the histogram of $y$ for interval of $x$ {\color{blue} (warning: spoiler ahead!)}
+%\end{itemize}
 
 
-%\begin{figure} 
-%\centering
- %  \caption{The figure appears in color in the electronic version of this article.}
-  % \label{fig:motivate}
-%\end{figure}
+%%\begin{figure} 
+%%\centering
+% %  \caption{The figure appears in color in the electronic version of this article.}
+%  % \label{fig:motivate}
+%%\end{figure}
 
-% \begin{figure}[htbp]
-%     \centering
-%     % trim l b r u
-%     \input{figures/bintree.pdf_tex}
-%     \caption{Binary tree representation of the mixture model, truncated at scale $s = 3$. At each node, $\bm{\vartheta}_{s,h}$ and $\pi_{s,h}$ are the associated kernel parameters and mixture weight, respectively.}
-%     \label{fig:btree}
-% \end{figure}
+%% \begin{figure}[htbp]
+%%     \centering
+%%     % trim l b r u
+%%     \input{figures/bintree.pdf_tex}
+%%     \caption{Binary tree representation of the mixture model, truncated at scale $s = 3$. At each node, $\bm{\vartheta}_{s,h}$ and $\pi_{s,h}$ are the associated kernel parameters and mixture weight, respectively.}
+%%     \label{fig:btree}
+%% \end{figure}
 
-\begin{itemize}
-\item[] In quantitative risk assessment we are interested in quantifying {\bf risk} (Piegorsch and Bailer, 2005)
-\item[] Risk is defined by the additional {\bf risk function }(Kodell and West, 1993), i.e.
-\begin{eqnarray*} 
-R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \mid x=0)=F_x(a)-F_0(a)
-\label{add_risk}
-\end{eqnarray*}
-\item[] In the above equation $a$ corresponds to a threshold of clinical interest (e.g. $a=37$ weeks, for premature delivery)
-\end{itemize}
+%\begin{itemize}
+%\item[] In quantitative risk assessment we are interested in quantifying {\bf risk} (Piegorsch and Bailer, 2005)
+%\item[] Risk is defined by the additional {\bf risk function }(Kodell and West, 1993), i.e.
+%\begin{eqnarray*} 
+%R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \mid x=0)=F_x(a)-F_0(a)
+%\label{add_risk}
+%\end{eqnarray*}
+%\item[] In the above equation $a$ corresponds to a threshold of clinical interest (e.g. $a=37$ weeks, for premature delivery)
+%\end{itemize}
 
 \color{DarkRed}
 \section*{Background}
 \color{Black}
 
-\subsection*{Multiscale models}
+\subsection*{Bayesian nonparametric univariate multiscale models}
 \color{Black}
 
 \begin{itemize}
-    \item[] Multiscale model define a mixture of increasingly concentrated kernels, e.g.
+    \item[] Univariate multiscale models define a mixture of kernels indexed by a binary tree,
 
         \[
-            f(y) = \sum_{s=0}^{\infty }\sum_{h=1}^{2^{s}} \pi_{s,h} \mathcal{K}(y; \bm{\mu}_{s,h}, \Omega_{s,h}),
+            f(y) = \sum_{s=0}^{\infty }\sum_{h=1}^{2^{s}} \pi_{s,h} \mathcal{K}(y; \mu_{s,h}, \Omega_{s,h}),
         \]
 
-        where $(s,h)$ \textbf{corresponds to a node of a binary tree} and $ \mathcal{K}$ is a multivariate scale and location kernel.
+        where $(s,h)$ \textbf{corresponds to a node of a binary tree} (Figure~\ref{fig:bintree generic}) and $ \mathcal{K}$ is a scale and location kernel.
         
-    \item[] $ \mathcal{K}$ is \textbf{increasingly concentrated} as $ s$ increases, and the location parameter $ \bm{\mu}_{s,h}$ should \textbf{span the whole space} as $ h$ moves between the values $ 1, \ldots, 2^{s}$.
+    \item[] $ \mathcal{K}$ is \textbf{increasingly concentrated} as $ s$ increases, and the location parameter $ \mu_{s,h}$ should \textbf{span the whole space} as $ h$ moves between the values $ 1, \ldots, 2^{s}$.
 
-    \item[] The nonparametric prior distribution for the mixture weights $ \pi_{s,h}$ has been developed by \citet{canale2016b}
+    \item[] A nonparametric prior distribution for the mixture weights $ \pi_{s,h}$ has been developed by \citet{canale2016b}, whereas a Bayesian nonparametric univariate mixture of kernels has been introduced by \citet{stefanucci2021}.
         
 \end{itemize}
 
@@ -179,7 +181,7 @@ R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \
 \color{Black}
 \begin{center}\vspace{1cm}
   \input{figures/bintree.pdf_tex}
-  \captionof{figure}{}
+  \captionof{figure}{\label{fig:bintree generic} Binary tree associated to the multiscale model.}
 \end{center}\vspace{1cm}
 
 \begin{flushright}
@@ -188,15 +190,21 @@ R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \
 
 \noindent
 \color{red}
-\frownie{} Con: Hard to generalize the binary tree to multivariate mixtures
+\frownie{} Con: how do we generalize the binary tree to multivariate kernels?
 \end{flushright}
+
+\subsection*{Problem}
+
+\begin{itemize}
+    \item[] Generalizing the model to the multivariate case $ \mathbb{R}^{d}$ seems hard, because the computational complexity of a $ d$-tree will explode very quickly.
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVES
 %----------------------------------------------------------------------------------------
 
 \color{DarkRed}
-\section*{Solution: use Hilbert curve partitioning}
+\section*{Solution: Hilbert curve partitioning}
 \color{Black}
 \begin{itemize}
     \item[] We partition the location space $ \Theta_{\bm{\mu}}$ so that we span the whole space in $ h$ and the partitions are nested,
@@ -206,7 +214,7 @@ R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \
 
         \vspace{.5cm}
 
-        The partition is done using the following two-stage procedure:
+        The partition is done using the following two-stage procedure based on the Hilbert curve \citep{hilbert1891}:
         \begin{itemize}
             \item Partition the cube $ [0,1]^{d}$ using the Hilbert curve (Figure~\ref{fig:partition-2d}).
 
@@ -222,13 +230,18 @@ R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \
             \label{fig:partition-2d}
         \end{center}
 
-        Sampling at each node from $ G_0$ truncated to $ \Theta_{\bm{\mu}; s,h}$ yields the \textbf{prior for the location parameter}, whereas $ \Omega_{s,h}$ are sampled from a distribution $ H_0$ \textbf{scaled by a deterministic monotone decreasing sequence} in $ s$,
+        Sampling at each node from $ G_0$ truncated to $ \Theta_{\bm{\mu}; s,h}$ yields the \textbf{prior for the location parameter},
+        \[
+            \bm{\mu}_{s,h} \sim G_0 \cdot \one_{\Theta_{\bm{\mu};s, h}}.
+        \]
+        
+        
+        The scale parameters $ \Omega_{s,h}$ are sampled from a distribution $ H_0$ \textbf{scaled by a deterministic monotone decreasing sequence} in $ s$,
         \[
                         \Omega_{s,h} = \diag \big( c(s), \ldots, c(s) \big) W_{s,h}, \quad W_{s,h} \iid H_0.
         \]
-        
-
 \end{itemize}
+
 %##########################################################
 \color{DarkRed}
 \section*{Interpretation}
@@ -239,11 +252,12 @@ R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \
 \begin{itemize}
 \item Nodes higher in the tree correspond to \textbf{coarser kernels} whereas deeper nodes correspond to \textbf{more localized kernels}.
     The posterior adapts the kernels to the smoothness of the data.
-\item We show that the random  location measure $G = \sum_{s=0}^{\infty }\sum_{h=1}^{2^s} \pi_{s,h} \delta_{\bm{\mu}_{s,h}}$ is \textbf{centered around $ G_0$} \textit{a priori},
+\item We generalize a property of \citet{stefanucci2021} to show that the random location measure $G = \sum_{s=0}^{\infty }\sum_{h=1}^{2^s} \pi_{s,h} \delta_{\bm{\mu}_{s,h}}$ is \textbf{centered around $ G_0$} \textit{a priori},
     \[
         \mathbb{E}[G(A)] = G_0(A)\quad \text{for all $ A \subseteq \Theta_{\bm{\mu}}$}.
     \]
     
+\item Also, we have control on the \textbf{prior average depth} of the binary tree by solving a 
 
 \end{itemize}
 \color{DarkRed}
@@ -252,71 +266,53 @@ R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \
 \color{DarkRed}
 \section*{Performance in simulated datasets}
 \color{Black}
+We use the multiscale model with Gaussian prior on the location parameters and inverse Wishart prior on the scale parameter to have efficient Gibbs sampling updates \citep{kalli2011}.
 \begin{itemize}
-\item Scenarios: 1) correctly specified, 2) misspecified ---\textsc{ddp}, 3) misspecified ---no $x$ effect
-\item Competitors: {\color{blue} \comirep}, {\color{red}\textsc{ddp}} \citep{deio:etal}, {\color{green} probit stick-breaking} \citep{rodriguez:2011}
-\item Inference on true additional risk function  $R_{\mbox{\textsc{a}}}(x,37)$ (shaded areas 95\% credible bands) in Figure 2
+\item Scenarios: 1) mixture of normals/skew normals, 2) multiscale mixture.
+\item Competitor: Pitman-Yor mixture model.
+\item Mean posterior predictive distribution for the multiscale model in Figure~\ref{fig:ppd}.
 \end{itemize}
 
- \begin{center}\vspace{1cm}
-\includegraphics[width=0.15\textwidth]{risk1_37}
-\includegraphics[width=0.15\textwidth]{risk2_37}
-\includegraphics[width=0.15\textwidth]{risk3_37}
-\captionof{figure}{Inference on the additional risk function for the three scenarios.}
+\begin{center}\vspace{1cm}
+    \includegraphics[width=0.225\textwidth]{r10average_ppdSmooth-indFALSE-red.png}
+    \includegraphics[width=0.225\textwidth]{r11average_ppdSmooth-indFALSE-red.png}
+
+    \captionof{figure}{\label{fig:ppd} True density function (\textit{black}) and mean posterior predictive distribution (\textit{orange}) for the multiscale model.}
 \end{center}
 
-\vspace{-0.5cm}
+\begin{center}
+    
+\end{center}
+
+\vspace{-1cm}
 
 %##############-####################################################
 \color{DarkRed}
-\section*{Analysis of the CPP Data}
+\section*{Application to the Galaxy dataset}
 \label{cpp}
 \color{Black}
 
 %##############-####################################################
 
 \begin{itemize}
-\item According to Figure~1, the conditional density of the  gestational age at delivery is far from being Gaussian and displays variability, skewness, and multimodality 
-\item at low--doses, the probability mass is concentrated around normal pregnancies, with the posterior mean (and 95\% c.i.) for $\mu(0)$ being $40.20$  $(40.01,40.34)$
-\item as \textsc{dde} grows the negative skewness is still maintained, and preterm deliveries increasingly inflates
-\item for {\bf benchmark dose analyses} the posterior mean and the $95\%$ c.i. of the BMD$_q$ are reported in Figure~3.
+    \item The galaxy marginal distributions (Figure~\ref{fig:galaxy marginals}) are correctly estimated, except for the redshift which seems more problematic.
+
+    \item The binary tree with nodes proportional to the estimated posterior median weight distribution (Figure~\ref{fig:galaxy binary tree}) gives \textbf{information} on the \textbf{location of the clusters within the space}.
+    
 \end{itemize}
 
-
-%
-\begin{minipage}{0.15\textwidth}
-\begin{tabular}{lrrr}
- \multicolumn{4}{c}{Benchmark doses $q$}\\
-    \hline
-  $q$& {\bf 0.01} & {\bf 0.05} & {\bf 0.10}  \\ 
-  \hline
- BMD$_q$ & 1.03  & 5.79 & 15.29 \\ 
- BMDL$_q$ & 0.64 & 3.70 & 9.85 \\
-   \hline
-\end{tabular}
-\end{minipage}
-%
-\begin{minipage}[c]{0.15\textwidth}
-\includegraphics[width=1\textwidth]{cpp_risk}
-\end{minipage}
-%
-\begin{minipage}[c]{0.15\textwidth}
-\includegraphics[width=1\textwidth]{cpp_bmd}
+\begin{minipage}[c]{0.45\textwidth}
+\includegraphics[width=1\textwidth]{posterior-predict-FALSE.png}
+\captionof{figure}{\label{fig:galaxy marginals} Posterior predictive distribution for the marginal distributions of the Galaxy dataset.}
 \end{minipage}
 
-\begin{minipage}{0.15\textwidth}
-\centering(a)
+\begin{minipage}[c]{0.45\textwidth}
+\includegraphics[width=1\textwidth]{binary-tree-FALSE.png}
+\vspace{-4cm}
+\captionof{figure}{\label{fig:galaxy binary tree} Multiscale binary tree with circles drawn proportionally to the median of the posterior distribution of the weights $ \pi_{s,h}$.}
 \end{minipage}
 %
-\begin{minipage}[c]{0.15\textwidth}
-\centering(b)
-\end{minipage}
-%
-\begin{minipage}[c]{0.15\textwidth}
-\centering (c)
-\end{minipage}
 
-\captionof{figure}{Benchmark doses for different values of risk $q$ (a); posterior mean (solid lines), and pointwise 95\% credible bands (shaded areas) for (b)  $R_{\mbox{\textsc{a}}}(x,37)$ and (c) the related BMD$_q$. In the $x$ axis in (b), the observed exposures. }
 
 \end{multicols} 
 
@@ -324,15 +320,15 @@ R_{\mbox{\textsc{a}}}(x,a) &=&  \mbox{pr}(y \leq a \mid x)- \mbox{pr}(y \leq a \
  %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
-\begin{minipage}[c]{0.85\linewidth}
-\bibliographystyle{plainnat}
-\bibliography{biblio}
+\mbox{}\\[0.5cm]
+\begin{minipage}[t]{0.04\linewidth}
+\centering
+\mbox{}
 \end{minipage}
 \mbox{}
-\begin{minipage}[c]{0.15\linewidth}
-\centering
-Scan the QR code below to download the published paper from Biometrics!
-\includegraphics[scale=0.90]{biometrics}
+\begin{minipage}[t]{0.85\linewidth}
+\bibliographystyle{plainnat}
+\bibliography{biblio}
 \end{minipage}
 
 \end{document}

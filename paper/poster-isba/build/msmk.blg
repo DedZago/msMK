@@ -3,47 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: msmk.aux
 The style file: plainnat.bst
 Database file #1: biblio.bib
-Warning--I didn't find a database entry for "deio:etal"
-Warning--I didn't find a database entry for "rodriguez:2011"
-You've used 1 entry,
+You've used 4 entries,
             2773 wiz_defined-function locations,
-            603 strings with 5039 characters,
-and the built_in function-call counts, 520 in all, are:
-= -- 49
-> -- 21
-< -- 1
-+ -- 7
-- -- 6
-* -- 42
-:= -- 83
-add.period$ -- 4
-call.type$ -- 1
-change.case$ -- 5
-chr.to.int$ -- 1
-cite$ -- 2
-duplicate$ -- 20
-empty$ -- 43
-format.name$ -- 9
-if$ -- 104
+            626 strings with 5476 characters,
+and the built_in function-call counts, 1867 in all, are:
+= -- 183
+> -- 82
+< -- 3
++ -- 28
+- -- 24
+* -- 160
+:= -- 295
+add.period$ -- 19
+call.type$ -- 4
+change.case$ -- 20
+chr.to.int$ -- 4
+cite$ -- 8
+duplicate$ -- 80
+empty$ -- 154
+format.name$ -- 32
+if$ -- 384
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 14
-num.names$ -- 4
-pop$ -- 7
+missing$ -- 4
+newline$ -- 35
+num.names$ -- 16
+pop$ -- 26
 preamble$ -- 1
-purify$ -- 4
+purify$ -- 16
 quote$ -- 0
-skip$ -- 17
+skip$ -- 59
 stack$ -- 0
-substring$ -- 33
-swap$ -- 1
+substring$ -- 86
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 11
+type$ -- 44
 warning$ -- 0
-while$ -- 5
+while$ -- 18
 width$ -- 0
-write$ -- 22
-(There were 2 warnings)
+write$ -- 73

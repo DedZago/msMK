@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.9)  12 JUN 2022 15:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.11)  13 JUN 2022 14:54
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -365,7 +365,13 @@ File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)) (./statmacros.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+) (./statmacros.sty
 \symmathx=\mathgroup11
    defining Unicode char U+0394 (decimal 916)
    defining Unicode char U+03B3 (decimal 947)
@@ -385,28 +391,28 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 ) (build/msmk.aux)
 \openout1 = `msmk.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Trying to load font information for T1+AlegreyaSans-LF on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Trying to load font information for T1+AlegreyaSans-LF on input line 70.
  (/usr/share/texlive/texmf-dist/tex/latex/alegreya/T1AlegreyaSans-LF.fd
 File: T1AlegreyaSans-LF.fd 2019/10/08 (autoinst) Font definitions for T1/AlegreyaSans-LF.
 )
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/n' in size <24.88> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 68.
+(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 70.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/n' will be
-(Font)              scaled to size 24.88pt on input line 68.
+(Font)              scaled to size 24.88pt on input line 70.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count282
@@ -440,63 +446,55 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/n' in size <51.6> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 80.
+(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 82.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/n' will be
-(Font)              scaled to size 51.6pt on input line 80.
+(Font)              scaled to size 51.6pt on input line 82.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/b/n' in size <51.6> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 80.
+(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 82.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/bold/n' will be
-(Font)              scaled to size 51.6pt on input line 80.
+(Font)              scaled to size 51.6pt on input line 82.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/n' in size <35.83> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 83.
+(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 85.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/n' will be
-(Font)              scaled to size 35.83pt on input line 83.
+(Font)              scaled to size 35.83pt on input line 85.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/n' in size <29.86> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 84.
+(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/n' will be
-(Font)              scaled to size 29.86pt on input line 84.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
+(Font)              scaled to size 29.86pt on input line 86.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 89.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 87.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 89.
  (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 <./figures/logo_unipd.png, id=1, 2309.62875pt x 1043.9pt>
 File: ./figures/logo_unipd.png Graphic file (type png)
 <use ./figures/logo_unipd.png>
-Package pdftex.def Info: ./figures/logo_unipd.png  used on input line 90.
+Package pdftex.def Info: ./figures/logo_unipd.png  used on input line 92.
 (pdftex.def)             Requested size: 461.91757pt x 208.77629pt.
 
-Overfull \hbox (17.73679pt too wide) in paragraph at lines 79--92
+Overfull \hbox (17.73679pt too wide) in paragraph at lines 81--94
 []$[]$ $[]$ 
  []
 
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/b/n' in size <35.83> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 105.
+(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 107.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/bold/n' will be
-(Font)              scaled to size 35.83pt on input line 105.
+(Font)              scaled to size 35.83pt on input line 107.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/b/n' in size <24.88> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 108.
+(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 110.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/bold/n' will be
-(Font)              scaled to size 24.88pt on input line 108.
-LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/b/sc' in size <24.88> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/bold/sc' tried instead on input line 125.
-LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/bold/sc' will be
-(Font)              scaled to size 24.88pt on input line 125.
-LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/sc' in size <24.88> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/sc' tried instead on input line 150.
-LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/sc' will be
-(Font)              scaled to size 24.88pt on input line 150.
+(Font)              scaled to size 24.88pt on input line 110.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/b/n' in size <29.86> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 160.
+(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 162.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/bold/n' will be
-(Font)              scaled to size 29.86pt on input line 160.
+(Font)              scaled to size 29.86pt on input line 162.
 (./figures/bintree.pdf_tex
 <./figures/bintree.pdf, id=2, page=1, 997.28064pt x 386.12117pt>
 File: ./figures/bintree.pdf Graphic file (type pdf)
@@ -520,90 +518,68 @@ Package pdftex.def Info: ./figures/bintree.pdf , page4 used on input line 76.
 (pdftex.def)             Requested size: 997.28064pt x 386.132pt.
 )
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/n' in size <20.74> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 182.
+(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 184.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/n' will be
-(Font)              scaled to size 20.74pt on input line 182.
+(Font)              scaled to size 20.74pt on input line 184.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/b/n' in size <20.74> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 182.
+(Font)              Font shape `T1/AlegreyaSans-LF/bold/n' tried instead on input line 184.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/bold/n' will be
-(Font)              scaled to size 20.74pt on input line 182.
+(Font)              scaled to size 20.74pt on input line 184.
 <figures/partition_2d_top2.png, id=6, 1128.46594pt x 339.51843pt>
 File: figures/partition_2d_top2.png Graphic file (type png)
 <use figures/partition_2d_top2.png>
-Package pdftex.def Info: figures/partition_2d_top2.png  used on input line 218.
+Package pdftex.def Info: figures/partition_2d_top2.png  used on input line 226.
 (pdftex.def)             Requested size: 1023.7802pt x 308.02455pt.
 <figures/partition_2d_bot2.png, id=9, 1114.1625pt x 325.215pt>
 File: figures/partition_2d_bot2.png Graphic file (type png)
 <use figures/partition_2d_bot2.png>
-Package pdftex.def Info: figures/partition_2d_bot2.png  used on input line 219.
+Package pdftex.def Info: figures/partition_2d_bot2.png  used on input line 227.
 (pdftex.def)             Requested size: 1023.7802pt x 298.83917pt.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 235.
+ (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/n' in size <14.4> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 227.
+(Font)              Font shape `T1/AlegreyaSans-LF/regular/n' tried instead on input line 241.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 227.
-LaTeX Font Info:    Trying to load font information for TS1+AlegreyaSans-LF on input line 240.
+(Font)              scaled to size 14.4pt on input line 241.
+LaTeX Font Info:    Trying to load font information for TS1+AlegreyaSans-LF on input line 253.
  (/usr/share/texlive/texmf-dist/tex/latex/alegreya/TS1AlegreyaSans-LF.fd
 File: TS1AlegreyaSans-LF.fd 2019/10/08 (autoinst) Font definitions for TS1/AlegreyaSans-LF.
 )
 LaTeX Font Info:    Font shape `TS1/AlegreyaSans-LF/m/n' in size <24.88> not available
-(Font)              Font shape `TS1/AlegreyaSans-LF/regular/n' tried instead on input line 240.
+(Font)              Font shape `TS1/AlegreyaSans-LF/regular/n' tried instead on input line 253.
 LaTeX Font Info:    Font shape `TS1/AlegreyaSans-LF/regular/n' will be
-(Font)              scaled to size 24.88pt on input line 240.
+(Font)              scaled to size 24.88pt on input line 253.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/it' in size <24.88> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/it' tried instead on input line 242.
+(Font)              Font shape `T1/AlegreyaSans-LF/regular/it' tried instead on input line 255.
 LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/it' will be
-(Font)              scaled to size 24.88pt on input line 242.
-
-
-Package natbib Warning: Citation `deio:etal' on page 1 undefined on input line 257.
-
-
-Package natbib Warning: Citation `rodriguez:2011' on page 1 undefined on input line 257.
-
-<./figures/risk1_37.pdf, id=11, 361.35pt x 650.43pt>
-File: ./figures/risk1_37.pdf Graphic file (type pdf)
-<use ./figures/risk1_37.pdf>
-Package pdftex.def Info: ./figures/risk1_37.pdf  used on input line 262.
-(pdftex.def)             Requested size: 341.24849pt x 614.25269pt.
-<./figures/risk2_37.pdf, id=12, 361.35pt x 650.43pt>
-File: ./figures/risk2_37.pdf Graphic file (type pdf)
-<use ./figures/risk2_37.pdf>
-Package pdftex.def Info: ./figures/risk2_37.pdf  used on input line 263.
-(pdftex.def)             Requested size: 341.24849pt x 614.25269pt.
-<./figures/risk3_37.pdf, id=13, 361.35pt x 650.43pt>
-File: ./figures/risk3_37.pdf Graphic file (type pdf)
-<use ./figures/risk3_37.pdf>
-Package pdftex.def Info: ./figures/risk3_37.pdf  used on input line 264.
-(pdftex.def)             Requested size: 341.24849pt x 614.25269pt.
-<./figures/cpp_risk.pdf, id=14, 361.35pt x 361.35pt>
-File: ./figures/cpp_risk.pdf Graphic file (type pdf)
-<use ./figures/cpp_risk.pdf>
-Package pdftex.def Info: ./figures/cpp_risk.pdf  used on input line 300.
-(pdftex.def)             Requested size: 341.24849pt x 341.2515pt.
-<./figures/cpp_bmd.pdf, id=15, 361.35pt x 361.35pt>
-File: ./figures/cpp_bmd.pdf Graphic file (type pdf)
-<use ./figures/cpp_bmd.pdf>
-Package pdftex.def Info: ./figures/cpp_bmd.pdf  used on input line 304.
-(pdftex.def)             Requested size: 341.24849pt x 341.2515pt.
-LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/sc' in size <20.74> not available
-(Font)              Font shape `T1/AlegreyaSans-LF/regular/sc' tried instead on input line 319.
-LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/sc' will be
-(Font)              scaled to size 20.74pt on input line 319.
-(build/msmk.bbl)
-<./figures/biometrics.jpg, id=16, 308.65312pt x 308.65312pt>
-File: ./figures/biometrics.jpg Graphic file (type jpg)
-<use ./figures/biometrics.jpg>
-Package pdftex.def Info: ./figures/biometrics.jpg  used on input line 335.
-(pdftex.def)             Requested size: 277.78523pt x 277.78523pt.
-
-Overfull \hbox (20.47359pt too wide) in paragraph at lines 327--337
-[]$[]$ [] $[]$ 
- []
-
-
-Package natbib Warning: There were undefined citations.
-
-[1
+(Font)              scaled to size 24.88pt on input line 255.
+<./figures/r10average_ppdSmooth-indFALSE-red.png, id=11, 1589.94pt x 867.24pt>
+File: ./figures/r10average_ppdSmooth-indFALSE-red.png Graphic file (type png)
+<use ./figures/r10average_ppdSmooth-indFALSE-red.png>
+Package pdftex.def Info: ./figures/r10average_ppdSmooth-indFALSE-red.png  used on input line 277.
+(pdftex.def)             Requested size: 511.90746pt x 279.2163pt.
+<./figures/r11average_ppdSmooth-indFALSE-red.png, id=12, 1589.94pt x 867.24pt>
+File: ./figures/r11average_ppdSmooth-indFALSE-red.png Graphic file (type png)
+<use ./figures/r11average_ppdSmooth-indFALSE-red.png>
+Package pdftex.def Info: ./figures/r11average_ppdSmooth-indFALSE-red.png  used on input line 278.
+(pdftex.def)             Requested size: 511.90746pt x 279.2163pt.
+LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/m/it' in size <20.74> not available
+(Font)              Font shape `T1/AlegreyaSans-LF/regular/it' tried instead on input line 280.
+LaTeX Font Info:    Font shape `T1/AlegreyaSans-LF/regular/it' will be
+(Font)              scaled to size 20.74pt on input line 280.
+<./figures/posterior-predict-FALSE.png, id=13, 1084.05pt x 650.43pt>
+File: ./figures/posterior-predict-FALSE.png Graphic file (type png)
+<use ./figures/posterior-predict-FALSE.png>
+Package pdftex.def Info: ./figures/posterior-predict-FALSE.png  used on input line 305.
+(pdftex.def)             Requested size: 1023.7802pt x 614.29239pt.
+<./figures/binary-tree-FALSE.png, id=14, 1084.05pt x 650.43pt>
+File: ./figures/binary-tree-FALSE.png Graphic file (type png)
+<use ./figures/binary-tree-FALSE.png>
+Package pdftex.def Info: ./figures/binary-tree-FALSE.png  used on input line 310.
+(pdftex.def)             Requested size: 1023.7802pt x 614.29239pt.
+ (build/msmk.bbl) [1
 
 
 Non-PDF special ignored!
@@ -619,20 +595,20 @@ pdfTeX warning: pdflatex (file ./figures/bintree.pdf): PDF inclusion: multiple p
 > <./figures/bintree.pdf
 
 pdfTeX warning: pdflatex (file ./figures/bintree.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./figures/risk1_37.pdf> <./figures/risk2_37.pdf> <./figures/risk3_37.pdf> <./figures/cpp_risk.pdf> <./figures/cpp_bmd.pdf> <./figures/biometrics.jpg>] (build/msmk.aux) ) 
+> <./figures/r10average_ppdSmooth-indFALSE-red.png (PNG copy)> <./figures/r11average_ppdSmooth-indFALSE-red.png (PNG copy)> <./figures/posterior-predict-FALSE.png (PNG copy)> <./figures/binary-tree-FALSE.png (PNG copy)>] (build/msmk.aux) ) 
 Here is how much of TeX's memory you used:
- 7472 strings out of 481239
- 115319 string characters out of 5920377
- 400785 words of memory out of 5000000
- 22546 multiletter control sequences out of 15000+600000
- 773000 words of font info for 119 fonts, out of 8000000 for 9000
+ 7504 strings out of 481239
+ 116296 string characters out of 5920377
+ 399159 words of memory out of 5000000
+ 22568 multiletter control sequences out of 15000+600000
+ 756760 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,77p,392b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/alegreya/algr_jfvu45.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/alegreya/algr_nwaz6g.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/alegreya/algr_tf5zvx.enc}</usr/share/texlive/texmf-dist/fonts/type1/huerta/alegreya/AlegreyaSans-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/huerta/alegreya/AlegreyaSans-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/huerta/alegreya/AlegreyaSans-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on build/msmk.pdf (1 page, 506835 bytes).
+ 41i,13n,77p,285b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/alegreya/algr_jfvu45.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/alegreya/algr_nwaz6g.enc} </home/dede/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm17.864pk></usr/share/texlive/texmf-dist/fonts/type1/huerta/alegreya/AlegreyaSans-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/huerta/alegreya/AlegreyaSans-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/huerta/alegreya/AlegreyaSans-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
+Output written on build/msmk.pdf (1 page, 1183519 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 82 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

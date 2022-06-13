@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,5 +10,28 @@ Antonio Canale and David~B. Dunson.
 \newblock Multiscale {{Bernstein}} polynomials for densities.
 \newblock \emph{Statistica Sinica}, 26\penalty0 (3):\penalty0 1175--1195, 2016.
 \newblock ISSN 1017-0405.
+
+\bibitem[Hilbert(1891)]{hilbert1891}
+David Hilbert.
+\newblock {\"Uber die stetige Abbildung einer Line auf ein Fl\"achenst\"uck}.
+\newblock \emph{Mathematische Annalen}, 38\penalty0 (3):\penalty0 459--460,
+  September 1891.
+\newblock ISSN 1432-1807.
+\newblock \doi{10.1007/BF01199431}.
+
+\bibitem[Kalli et~al.(2011)Kalli, Griffin, and Walker]{kalli2011}
+Maria Kalli, Jim~E. Griffin, and Stephen~G. Walker.
+\newblock Slice sampling mixture models.
+\newblock \emph{Statistics and Computing}, 21\penalty0 (1):\penalty0 93--105,
+  January 2011.
+\newblock ISSN 0960-3174, 1573-1375.
+\newblock \doi{10.1007/s11222-009-9150-y}.
+
+\bibitem[Stefanucci and Canale(2021)]{stefanucci2021}
+Marco Stefanucci and Antonio Canale.
+\newblock Multiscale stick-breaking mixture models.
+\newblock \emph{Statistics and Computing}, 31\penalty0 (2), January 2021.
+\newblock ISSN 1573-1375.
+\newblock \doi{10.1007/s11222-020-09991-1}.
 
 \end{thebibliography}
